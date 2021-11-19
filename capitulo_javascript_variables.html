@@ -1,0 +1,1637 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.0">
+    
+    
+      
+        <title>Variables - Programación Web</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.8b42a75e.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#variables" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="index.html" title="Programación Web" class="md-header__button md-logo" aria-label="Programación Web" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programación Web
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Variables
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Programación Web" class="md-nav__button md-logo" aria-label="Programación Web" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    Programación Web
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Contenidos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Introducción a HTML
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introducción a HTML" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Introducción a HTML
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_editores.html" class="md-nav__link">
+        Editores HTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_etiquetas.html" class="md-nav__link">
+        Sintaxis del lenguaje
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_estructura_basica.html" class="md-nav__link">
+        Estructura básica de una Web
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_elementos_de_la_cabecera.html" class="md-nav__link">
+        Elementos de la cabecera
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_etiquetas_basicas.html" class="md-nav__link">
+        Etiquetas básicas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_listas.html" class="md-nav__link">
+        Listas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_tablas.html" class="md-nav__link">
+        Tablas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_cajas.html" class="md-nav__link">
+        Cajas, etiqueta DIV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_enlaces.html" class="md-nav__link">
+        Enlaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_imagenes.html" class="md-nav__link">
+        Imágenes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_formularios.html" class="md-nav__link">
+        Formularios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_eventos.html" class="md-nav__link">
+        Eventos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_simbolos.html" class="md-nav__link">
+        Símbolos HTML
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Introducción a CSS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introducción a CSS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Introducción a CSS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_adjuntar_una_hoja_de_estilo.html" class="md-nav__link">
+        Adjuntar una hoja de estilo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_definicion_de_estilos.html" class="md-nav__link">
+        Definición de estilos para etiquetas HTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_identificadores_y_clases.html" class="md-nav__link">
+        Identificadores y clases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          Estilos CSS básicos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Estilos CSS básicos" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Estilos CSS básicos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_estilos_basicos.html" class="md-nav__link">
+        Sintaxis básica
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_estilos_para_textos.html" class="md-nav__link">
+        Estilos para textos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_estilos_para_parrafos.html" class="md-nav__link">
+        Estilos para párrafos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_estilos_para_fondos.html" class="md-nav__link">
+        Estilos para fondos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_estilos_para_cajas.html" class="md-nav__link">
+        Estilos para cajas
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_pseudo-clases.html" class="md-nav__link">
+        Pseudo-clases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_capas.html" class="md-nav__link">
+        Capas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_ejemplo.html" class="md-nav__link">
+        Ejemplo de uso
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Introducción a HTML 5
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introducción a HTML 5" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Introducción a HTML 5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_navegadores.html" class="md-nav__link">
+        Navegadores que lo soportan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_doctype.html" class="md-nav__link">
+        Doctype
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_estructura_semantica.html" class="md-nav__link">
+        Estructura semántica
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_formularios.html" class="md-nav__link">
+        Formularios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_mark.html" class="md-nav__link">
+        Etiqueta Mark
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_canvas.html" class="md-nav__link">
+        Canvas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_audio.html" class="md-nav__link">
+        Audio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_video.html" class="md-nav__link">
+        Vídeo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_geolocalizacion.html" class="md-nav__link">
+        Geolocalización
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_almacenamiento_offline.html" class="md-nav__link">
+        Almacenamiento Offline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_deteccion.html" class="md-nav__link">
+        Detectar funcionalidades de HTML 5
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Introducción a CSS 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introducción a CSS 3" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Introducción a CSS 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_nuevos_selectores.html" class="md-nav__link">
+        Nuevos selectores de atributos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_nuevas_pseudo-clases.html" class="md-nav__link">
+        Nuevas pseudo-clases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_color.html" class="md-nav__link">
+        Color
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_bordes.html" class="md-nav__link">
+        Bordes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_fondos.html" class="md-nav__link">
+        Fondos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_texto.html" class="md-nav__link">
+        Texto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_columnas.html" class="md-nav__link">
+        Columnas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_modelo_de_caja_basico.html" class="md-nav__link">
+        Modelo de caja básico
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_transiciones.html" class="md-nav__link">
+        Transiciones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_transformaciones.html" class="md-nav__link">
+        Transformaciones
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Introducción a JavaScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introducción a JavaScript" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Introducción a JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_inclusion_en_html.html" class="md-nav__link">
+        Inclusión de JavaScript en HTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_etiqueta_noscript.html" class="md-nav__link">
+        Etiqueta noscript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_consideraciones.html" class="md-nav__link">
+        Consideraciones sobre el lenguaje
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Variables
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="capitulo_javascript_variables.html" class="md-nav__link md-nav__link--active">
+        Variables
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-variables" class="md-nav__link">
+    Tipos de variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables-numericas" class="md-nav__link">
+    Variables numéricas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-tipo-cadenas-de-texto" class="md-nav__link">
+    Variables tipo cadenas de texto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booleanos" class="md-nav__link">
+    Booleanos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipo-de-una-variable" class="md-nav__link">
+    Tipo de una variable
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_operadores.html" class="md-nav__link">
+        Operadores
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_control_de_flujo.html" class="md-nav__link">
+        Estructuras de control de flujo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_funciones_utiles.html" class="md-nav__link">
+        Funciones útiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_funciones.html" class="md-nav__link">
+        Funciones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_dom.html" class="md-nav__link">
+        DOM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_eventos.html" class="md-nav__link">
+        Eventos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_deteccion_de_errores.html" class="md-nav__link">
+        Detección de errores
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_mas_informacion.html" class="md-nav__link">
+        Más información
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_ejercicios_1.html" class="md-nav__link">
+        Ejercicios 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_ejercicios_2.html" class="md-nav__link">
+        Ejercicios 2
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-variables" class="md-nav__link">
+    Tipos de variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables-numericas" class="md-nav__link">
+    Variables numéricas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-tipo-cadenas-de-texto" class="md-nav__link">
+    Variables tipo cadenas de texto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booleanos" class="md-nav__link">
+    Booleanos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipo-de-una-variable" class="md-nav__link">
+    Tipo de una variable
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h1>
+<p>Las variables en JavaScript se crean mediante la palabra reservada <code>var</code>, que solamente es necesario utilizarla la primera vez (al declarar la variable), de la forma:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">var</span> <span class="nx">numero1</span> <span class="o">=</span> <span class="mf">2</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">numero2</span> <span class="o">=</span> <span class="mf">3</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">resultado</span> <span class="o">=</span> <span class="nx">numero1</span> <span class="o">+</span> <span class="nx">numero2</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<p>En javascript no es necesario declarar las variables con <code>var</code>, y en este caso lo que hace es crear una variable global a la que asigna el valor correspondiente. Por esta razón se recomienda declarar siempre las variables y llevar cuidado con esta característica.</p>
+<p>El nombre de la variable solo puede estar formado por letas, números, el símbolo de dólar "$" y el guión bajo "_", además la primera letra del nombre no puede ser un número. A continuación se incluyen algunos ejemplos de nombres válidos e incorrectos:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">// Ejemplos correctos</span>
+<span class="kd">var</span> <span class="nx">$numero1</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">_$letra</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">$$$otroNumero</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">$_a__$4</span><span class="p">;</span>
+
+<span class="c1">// Ejemplos incorrectos</span>
+<span class="kd">var</span> <span class="mi">1n</span><span class="nx">umero</span><span class="p">;</span>  <span class="c1">// Empieza por un número</span>
+<span class="kd">var</span> <span class="nx">numero</span><span class="p">;</span><span class="mf">1</span><span class="nx">_12</span><span class="mf">.3</span><span class="p">;</span>  <span class="c1">// Contiene los carácteres &quot;;&quot; y &quot;.&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="tipos-de-variables">Tipos de variables<a class="headerlink" href="#tipos-de-variables" title="Permanent link">&para;</a></h2>
+<p>Dado que todas las variables se crean de la misma forma (mediante la palabra reservada <code>var</code>), el tipo de la variable vendrá definido según el valor que se le asigne o almacene en ella. A continuación se detallan los diferentes tipos de variables posibles:</p>
+<h3 id="variables-numericas">Variables numéricas<a class="headerlink" href="#variables-numericas" title="Permanent link">&para;</a></h3>
+<p>Si a una variable se le asigna un entero o un valor decimal dicha variable se convertirá a tipo numérico, por ejemplo:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">var</span> <span class="nx">num1</span> <span class="o">=</span> <span class="mf">16</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">num2</span> <span class="o">=</span> <span class="mf">3.1415</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="variables-tipo-cadenas-de-texto">Variables tipo cadenas de texto<a class="headerlink" href="#variables-tipo-cadenas-de-texto" title="Permanent link">&para;</a></h3>
+<p>Se utilizan para almacenar caracteres, palabras y/o frases de texto. Para asignar el valor a la variable, se encierra el valor entre comillas dobles o simples, para delimitar su comienzo y su final, por ejemplo:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">var</span> <span class="nx">mensaje</span> <span class="o">=</span> <span class="s2">&quot;Bienvenido a nuestro sitio web&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">nombreProducto</span> <span class="o">=</span> <span class="s1">&#39;Producto ABC&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">letraSeleccionada</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">texto1_1</span> <span class="o">=</span> <span class="s2">&quot;Una frase con &#39;comillas simples&#39; dentro&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">texto1_2</span> <span class="o">=</span> <span class="s1">&#39;Una frase con \&#39;comillas simples\&#39; dentro&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">texto2_1</span> <span class="o">=</span> <span class="s1">&#39;Una frase con &quot;comillas dobles&quot; dentro&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">texto2_2</span> <span class="o">=</span> <span class="s2">&quot;Una frase con \&quot;comillas dobles\&quot; dentro&quot;</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="booleanos">Booleanos<a class="headerlink" href="#booleanos" title="Permanent link">&para;</a></h3>
+<p>Una variable de tipo boolean almacena un tipo especial de valor que solamente puede tomar dos valores: true (verdadero) o false (falso). Por ejemplo:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">var</span> <span class="nx">clienteRegistrado</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">ivaIncluido</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h3>
+<p>Para definir un array, se utilizan los caracteres <code>[</code> y <code>]</code> para delimitar su comienzo y su final y se utiliza el carácter <code>,</code> (coma) para separar sus elementos:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">var</span> <span class="nx">nombre_array</span> <span class="o">=</span> <span class="p">[</span><span class="nx">valor1</span><span class="p">,</span> <span class="nx">valor2</span><span class="p">,</span> <span class="p">...,</span> <span class="nx">valorN</span><span class="p">];</span>
+</code></pre></div>
+</td></tr></table>
+<p>Un nuevo array se puede declarar asignado valores iniciales (como en el ejemplo anterior), o vacío haciendo <code>var array1 = new Array();</code> o también <code>var array2 = [];</code> y después asignarle valores:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">var</span> <span class="nx">array1</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Array</span><span class="p">();</span>
+<span class="nx">array1</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;hola&quot;</span><span class="p">;</span>
+<span class="nx">array1</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;mundo&quot;</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">saludo</span> <span class="o">=</span> <span class="nx">array1</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>  <span class="c1">// Obtener el valor de un elemento del array</span>
+</code></pre></div>
+</td></tr></table>
+<p>Las posiciones o índices del array empiezan en 0 y terminan en el tamaño del array menos uno.</p>
+<h3 id="tipo-de-una-variable">Tipo de una variable<a class="headerlink" href="#tipo-de-una-variable" title="Permanent link">&para;</a></h3>
+<p>En JavaScript se puede comprobar el tipo de una variable mediante el operador <code>typeof</code>, por ejemplo:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="ow">typeof</span> <span class="s2">&quot;John&quot;</span>                <span class="c1">// string</span>
+<span class="ow">typeof</span> <span class="mf">3.14</span>                  <span class="c1">// number</span>
+<span class="ow">typeof</span> <span class="kc">false</span>                 <span class="c1">// boolean</span>
+<span class="ow">typeof</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">]</span>             <span class="c1">// object</span>
+</code></pre></div>
+</td></tr></table>
+<p>JavaScript define los siguientes tipos primitivos de variables: <em>undefined, null, boolean, number, string</em> y <em>object</em>. Los dos primeros (equivalentes) se utilizan para identificar cuando se accede a una variable que está sin definir. Los tipos <em>boolean, number</em> y <em>string</em> ya los hemos visto en las secciones anteriores, pero hay que destacar que el tipo <em>object</em> se utiliza para definir tanto a los arrays como a los objectos (los cuales no se tratarán en este manual de iniciación).</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pie">
+      
+        
+        <a href="capitulo_javascript_consideraciones.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Consideraciones sobre el lenguaje" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Consideraciones sobre el lenguaje
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="capitulo_javascript_operadores.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Operadores" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              Operadores
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}, "search": "assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.4fc53ad4.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

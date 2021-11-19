@@ -1,0 +1,1698 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.0">
+    
+    
+      
+        <title>DOM - Programación Web</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.8b42a75e.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dom" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="index.html" title="Programación Web" class="md-header__button md-logo" aria-label="Programación Web" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programación Web
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DOM
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Programación Web" class="md-nav__button md-logo" aria-label="Programación Web" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    Programación Web
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Contenidos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Introducción a HTML
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introducción a HTML" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Introducción a HTML
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_editores.html" class="md-nav__link">
+        Editores HTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_etiquetas.html" class="md-nav__link">
+        Sintaxis del lenguaje
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_estructura_basica.html" class="md-nav__link">
+        Estructura básica de una Web
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_elementos_de_la_cabecera.html" class="md-nav__link">
+        Elementos de la cabecera
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_etiquetas_basicas.html" class="md-nav__link">
+        Etiquetas básicas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_listas.html" class="md-nav__link">
+        Listas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_tablas.html" class="md-nav__link">
+        Tablas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_cajas.html" class="md-nav__link">
+        Cajas, etiqueta DIV
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_enlaces.html" class="md-nav__link">
+        Enlaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_imagenes.html" class="md-nav__link">
+        Imágenes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_formularios.html" class="md-nav__link">
+        Formularios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_eventos.html" class="md-nav__link">
+        Eventos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html_simbolos.html" class="md-nav__link">
+        Símbolos HTML
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Introducción a CSS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introducción a CSS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Introducción a CSS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_adjuntar_una_hoja_de_estilo.html" class="md-nav__link">
+        Adjuntar una hoja de estilo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_definicion_de_estilos.html" class="md-nav__link">
+        Definición de estilos para etiquetas HTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_identificadores_y_clases.html" class="md-nav__link">
+        Identificadores y clases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          Estilos CSS básicos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Estilos CSS básicos" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Estilos CSS básicos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_estilos_basicos.html" class="md-nav__link">
+        Sintaxis básica
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_estilos_para_textos.html" class="md-nav__link">
+        Estilos para textos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_estilos_para_parrafos.html" class="md-nav__link">
+        Estilos para párrafos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_estilos_para_fondos.html" class="md-nav__link">
+        Estilos para fondos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_estilos_para_cajas.html" class="md-nav__link">
+        Estilos para cajas
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_pseudo-clases.html" class="md-nav__link">
+        Pseudo-clases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_capas.html" class="md-nav__link">
+        Capas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css_ejemplo.html" class="md-nav__link">
+        Ejemplo de uso
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Introducción a HTML 5
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introducción a HTML 5" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Introducción a HTML 5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_navegadores.html" class="md-nav__link">
+        Navegadores que lo soportan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_doctype.html" class="md-nav__link">
+        Doctype
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_estructura_semantica.html" class="md-nav__link">
+        Estructura semántica
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_formularios.html" class="md-nav__link">
+        Formularios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_mark.html" class="md-nav__link">
+        Etiqueta Mark
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_canvas.html" class="md-nav__link">
+        Canvas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_audio.html" class="md-nav__link">
+        Audio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_video.html" class="md-nav__link">
+        Vídeo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_geolocalizacion.html" class="md-nav__link">
+        Geolocalización
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_almacenamiento_offline.html" class="md-nav__link">
+        Almacenamiento Offline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_html5_deteccion.html" class="md-nav__link">
+        Detectar funcionalidades de HTML 5
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Introducción a CSS 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introducción a CSS 3" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Introducción a CSS 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_nuevos_selectores.html" class="md-nav__link">
+        Nuevos selectores de atributos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_nuevas_pseudo-clases.html" class="md-nav__link">
+        Nuevas pseudo-clases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_color.html" class="md-nav__link">
+        Color
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_bordes.html" class="md-nav__link">
+        Bordes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_fondos.html" class="md-nav__link">
+        Fondos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_texto.html" class="md-nav__link">
+        Texto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_columnas.html" class="md-nav__link">
+        Columnas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_modelo_de_caja_basico.html" class="md-nav__link">
+        Modelo de caja básico
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_transiciones.html" class="md-nav__link">
+        Transiciones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_css3_transformaciones.html" class="md-nav__link">
+        Transformaciones
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Introducción a JavaScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introducción a JavaScript" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Introducción a JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript.html" class="md-nav__link">
+        Introducción
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_inclusion_en_html.html" class="md-nav__link">
+        Inclusión de JavaScript en HTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_etiqueta_noscript.html" class="md-nav__link">
+        Etiqueta noscript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_consideraciones.html" class="md-nav__link">
+        Consideraciones sobre el lenguaje
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_variables.html" class="md-nav__link">
+        Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_operadores.html" class="md-nav__link">
+        Operadores
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_control_de_flujo.html" class="md-nav__link">
+        Estructuras de control de flujo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_funciones_utiles.html" class="md-nav__link">
+        Funciones útiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_funciones.html" class="md-nav__link">
+        Funciones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          DOM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="capitulo_javascript_dom.html" class="md-nav__link md-nav__link--active">
+        DOM
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acceso-a-nodos-del-arbol-dom" class="md-nav__link">
+    Acceso a nodos del árbol DOM
+  </a>
+  
+    <nav class="md-nav" aria-label="Acceso a nodos del árbol DOM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getelementsbytagname" class="md-nav__link">
+    getElementsByTagName()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getelementsbyname" class="md-nav__link">
+    getElementsByName()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getelementbyid" class="md-nav__link">
+    getElementById()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-y-eliminacion-de-nodos" class="md-nav__link">
+    Creación y eliminación de nodos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceso-a-atributos-de-un-nodo" class="md-nav__link">
+    Acceso a atributos de un nodo
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_eventos.html" class="md-nav__link">
+        Eventos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_javascript_deteccion_de_errores.html" class="md-nav__link">
+        Detección de errores
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_mas_informacion.html" class="md-nav__link">
+        Más información
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_ejercicios_1.html" class="md-nav__link">
+        Ejercicios 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo_ejercicios_2.html" class="md-nav__link">
+        Ejercicios 2
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acceso-a-nodos-del-arbol-dom" class="md-nav__link">
+    Acceso a nodos del árbol DOM
+  </a>
+  
+    <nav class="md-nav" aria-label="Acceso a nodos del árbol DOM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getelementsbytagname" class="md-nav__link">
+    getElementsByTagName()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getelementsbyname" class="md-nav__link">
+    getElementsByName()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getelementbyid" class="md-nav__link">
+    getElementById()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-y-eliminacion-de-nodos" class="md-nav__link">
+    Creación y eliminación de nodos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceso-a-atributos-de-un-nodo" class="md-nav__link">
+    Acceso a atributos de un nodo
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="dom">DOM<a class="headerlink" href="#dom" title="Permanent link">&para;</a></h1>
+<p>El <em>Document Object Model</em> o DOM ('Modelo de Objetos del Documento' o 'Modelo en Objetos para la Representación de Documentos') es esencialmente una interfaz que proporciona un conjunto estándar de objetos para representar documentos HTML y XML, aportando una interfaz estándar para acceder a ellos y manipularlos. A través del DOM se pueden acceder y modificar el contenido, estructura y estilo de los documentos HTML y XML, y es para lo que se diseñó principalmente.</p>
+<p>DOM transforma todos los documentos XHTML en un conjunto de elementos llamados nodos, que están interconectados y que representan los contenidos de las páginas web y las relaciones entre ellos. Por su aspecto, la unión de todos los nodos se llama "árbol de nodos".</p>
+<p>Por ejemplo, la siguiente página HTML:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/xhtml&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;text/html; charset=iso-8859-1&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Página sencilla<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Esta página es <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>muy sencilla<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Se transformaría en el siguiente árbol de nodos:</p>
+<p><img alt="Ejemplo DOM" src="images/web_js/dom_example.jpg" title="Ejemplo DOM" /></p>
+<p>Una vez construido automáticamente el árbol completo de nodos DOM, ya es posible utilizar las funciones DOM para acceder de forma directa a cualquier nodo del árbol. Como acceder a un nodo del árbol es equivalente a acceder a "un trozo" de la página, por lo que es posible manipular de forma sencilla la página: acceder al valor de un elemento, establecer el valor de un elemento, mover un elemento de la página, crear y añadir nuevos elementos, etc.</p>
+<p>DOM proporciona dos métodos alternativos para acceder a un nodo específico: acceso a través de sus nodos padre y acceso directo.</p>
+<p>Las funciones que proporciona DOM para acceder a un nodo a través de sus nodos padre consisten en acceder al nodo raíz de la página y después a sus nodos hijos y a los nodos hijos de esos hijos y así sucesivamente hasta el último nodo de la rama terminada por el nodo buscado.</p>
+<p>Sin embargo, cuando se quiere acceder a un nodo específico, es mucho más rápido acceder directamente a ese nodo y no llegar a él descendiendo a través de todos sus nodos padre.</p>
+<h2 id="acceso-a-nodos-del-arbol-dom">Acceso a nodos del árbol DOM<a class="headerlink" href="#acceso-a-nodos-del-arbol-dom" title="Permanent link">&para;</a></h2>
+<h3 id="getelementsbytagname">getElementsByTagName()<a class="headerlink" href="#getelementsbytagname" title="Permanent link">&para;</a></h3>
+<p>Obtiene todos los elementos de la página HTML cuya etiqueta sea igual que el parámetro que se le pasa a la función, por ejemplo:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">var</span> <span class="nx">parrafos</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<p>El valor que se indica delante del nombre de la función (en este caso <em>document</em>, que sería la raíz del árbol DOM) es el nodo a partir del cual se realiza la búsqueda de los elementos. En este caso, como se quieren obtener
+todos los párrafos de la página, se utiliza el valor <em>document</em> como punto de partida de la búsqueda.</p>
+<p>El valor que devuelve la función es un array con todos los nodos que cumplen la condición de que su etiqueta coincide con el parámetro proporcionado. El valor devuelto es un array de nodos del DOM, no un array de cadenas de texto o un array de objetos normales.</p>
+<p>De este modo, se puede obtener el primer párrafo de la página de la siguiente manera:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">var</span> <span class="nx">primerParrafo</span> <span class="o">=</span> <span class="nx">parrafos</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+</code></pre></div>
+</td></tr></table>
+<p>De la misma forma, se podrían recorrer todos los párrafos de la página con el siguiente código:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">parrafos</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">parrafo</span> <span class="o">=</span> <span class="nx">parrafos</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>La función <code>getElementsByTagName()</code> se puede aplicar de forma recursiva sobre cada uno de los nodos devueltos por la función. En el siguiente ejemplo, se obtienen todos los enlaces del primer párrafo de la página:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">var</span> <span class="nx">parrafos</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">primerParrafo</span> <span class="o">=</span> <span class="nx">parrafos</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">enlaces</span> <span class="o">=</span> <span class="nx">primerParrafo</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="getelementsbyname">getElementsByName()<a class="headerlink" href="#getelementsbyname" title="Permanent link">&para;</a></h3>
+<p>Esta función es similar a la anterior, pero en este caso se buscan los
+elementos cuyo atributo <code>name</code> sea igual al parámetro proporcionado. En el siguiente ejemplo, se obtiene directamente el único párrafo con el nombre indicado:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">var</span> <span class="nx">parrafoEspecial</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByName</span><span class="p">(</span><span class="s2">&quot;especial&quot;</span><span class="p">);</span>
+<span class="o">&lt;</span><span class="nx">p</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;prueba&quot;</span><span class="o">&gt;</span><span class="p">...</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="o">&lt;</span><span class="nx">p</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;especial&quot;</span><span class="o">&gt;</span><span class="p">...</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">...</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Internet Explorer 6.0 no implementa de forma correcta esta función, ya que sólo la tiene en cuenta para los elementos de tipo <code>&lt;input&gt;</code> y <code>&lt;img&gt;</code>. Además, también tiene en consideración los elementos cuyo atributo id sea igual al parámetro de la función.</p>
+<h3 id="getelementbyid">getElementById()<a class="headerlink" href="#getelementbyid" title="Permanent link">&para;</a></h3>
+<p>Esta es la función más utilizada cuando se desarrollan aplicaciones web
+dinámicas ya que permite acceder directamente a un nodo y poder leer o
+modificar sus propiedades.</p>
+<p>La función <code>getElementById()</code> devuelve el elemento HTML cuyo atributo <code>id</code> coincide con el parámetro indicado en la función. Como el atributo <code>id</code> debe ser único en toda la página, la función devuelve únicamente el nodo deseado.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kd">var</span> <span class="nx">cabecera</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;cabecera&quot;</span><span class="p">);</span>
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;cabecera&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;/&quot;</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;logo&quot;</span><span class="o">&gt;</span><span class="p">...</span><span class="o">&lt;</span><span class="err">/a&gt;</span>
+<span class="o">&lt;</span><span class="err">/div&gt;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Internet Explorer 6.0 también interpreta incorrectamente esta función, ya que devuelve también aquellos elementos cuyo atributo name coincida con el parámetro proporcionado a la función.</p>
+<h2 id="creacion-y-eliminacion-de-nodos">Creación y eliminación de nodos<a class="headerlink" href="#creacion-y-eliminacion-de-nodos" title="Permanent link">&para;</a></h2>
+<p>Con JavaScript también se pueden añadir y eliminar elementos dinámicamente del árbol DOM. Para esto se utilizan las funciones <code>createElement(etiqueta)</code>, <code>createTextNode(text)</code>, <code>appendChild(child)</code> y <code>removeChild(child)</code>.</p>
+<p>Dado que su uso se queda fuera de los contenidos de este curso, si se desea obtener más información se puede consultar la web:</p>
+<ul>
+<li>http://www.w3schools.com/jsref/met_document_createelement.asp</li>
+<li>http://www.w3schools.com/jsref/met_document_createtextnode.asp</li>
+<li>http://www.w3schools.com/jsref/met_node_appendchild.asp</li>
+<li>http://www.w3schools.com/dom/met_element_removechild.asp</li>
+</ul>
+<h2 id="acceso-a-atributos-de-un-nodo">Acceso a atributos de un nodo<a class="headerlink" href="#acceso-a-atributos-de-un-nodo" title="Permanent link">&para;</a></h2>
+<p>Una vez que se ha accedido a un nodo, el siguiente paso natural consiste en acceder y/o modificar sus atributos y propiedades. Mediante DOM, es posible acceder de forma sencilla a todos los atributos y todas las propiedades CSS de cualquier elemento de la página.</p>
+<p>Los atributos de los elementos de la página se transforman automáticamente en propiedades de los nodos. Para acceder a su valor, simplemente se indica el nombre del atributo detrás del nombre del nodo.</p>
+<p>El siguiente ejemplo obtiene de forma directa la dirección a la que enlaza el enlace:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">// HTML</span>
+<span class="o">&lt;</span><span class="nx">a</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;enlace&quot;</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;http://www.ua.es&quot;</span><span class="o">&gt;</span><span class="nx">Universidad</span> <span class="nx">de</span> <span class="nx">Alicante</span><span class="o">&lt;</span><span class="err">/a&gt;</span>
+<span class="o">&lt;</span><span class="nx">img</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;imagen&quot;</span> <span class="nx">style</span><span class="o">=</span><span class="s2">&quot;margin:0; border:0;&quot;</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;logo.png&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nx">p</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;parrafo&quot;</span> <span class="nx">style</span><span class="o">=</span><span class="s2">&quot;font-weight: bold;&quot;</span> <span class="kd">class</span><span class="o">=</span><span class="s2">&quot;destacado&quot;</span><span class="o">&gt;</span><span class="nx">Texto</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+
+<span class="c1">// JavaScript</span>
+<span class="kd">var</span> <span class="nx">enlace</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;enlace&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">imagen</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;imagen&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">parrafo</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;parrafo&quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">enlace</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>       <span class="c1">// muestra &quot;enlace&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">enlace</span><span class="p">.</span><span class="nx">href</span><span class="p">);</span>     <span class="c1">// muestra &quot;http://www.ua.es&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">enlace</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span><span class="c1">// muestra &quot;Universidad de Alicante&quot;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">imagen</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>       <span class="c1">// muestra &quot;imagen&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">imagen</span><span class="p">.</span><span class="nx">src</span><span class="p">);</span>      <span class="c1">// muestra &quot;logo.png&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">imagen</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">margin</span><span class="p">);</span> <span class="c1">// muestra &quot;0px&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">imagen</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">border</span><span class="p">);</span> <span class="c1">// muestra &quot;0px none&quot;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">parrafo</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>               <span class="c1">// muestra &quot;parrafo&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">parrafo</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span>        <span class="c1">// muestra &quot;Texto&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">parrafo</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontWeight</span><span class="p">);</span> <span class="c1">// muestra &quot;bold&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">parrafo</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>        <span class="c1">// muestra &quot;destacado&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Es importante destacar que si el nombre de una propiedad o estilo es compuesto, como "font-weight", que tiene un guión "-" en el medio, para acceder dicho guión se elimina y además se escribe en mayúsculas la primera letra se la siguiente palabra, por ejemplo:</p>
+<ul>
+<li><em>font-weight</em> se transforma en <em>fontWeight</em></li>
+<li><em>line-height</em> se transforma en <em>lineHeight</em></li>
+<li><em>border-top-style</em> se transforma en <em>borderTopStyle</em></li>
+<li><em>list-style-image</em> se transforma en <em>listStyleImage</em></li>
+</ul>
+<p>También es importante destacar que como la palabra <code>class</code> está reservada por JavaScript, no es posible utilizarla para acceder al atributo <code>class</code> del elemento XHTML. En su lugar, DOM utiliza el nombre <code>className</code> para acceder.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pie">
+      
+        
+        <a href="capitulo_javascript_funciones.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Funciones" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Funciones
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="capitulo_javascript_eventos.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Eventos" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              Eventos
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}, "search": "assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.4fc53ad4.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
